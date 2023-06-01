@@ -49,7 +49,7 @@ with open('lc.txt', 'r') as file:
     for line in file:
         lines.append(line.strip())
 print("length of list",len(lines));    
-question_no=765
+question_no=0
 e=[]
 for j in range(0,len(lines)):
    i=lines[j]
@@ -59,9 +59,9 @@ for j in range(0,len(lines)):
       with open('question_name.txt', 'a') as f:
          f.write(question_name[-1]+'\n')
          print(question_name[-1])
-      with open('question_index_with_link1.txt', 'a') as f:
+      with open('question_index_with_link.txt', 'a') as f:
          f.write(str(question_no)+'.'+i+'\n')
-      with open('question_difficulty1.txt', 'a') as f:
+      with open('question_difficulty.txt', 'a') as f:
          f.write(question_difficulty[-1]+'\n')   
       # Create the main directory "Question_data" if it doesn't exist
       if not os.path.exists('Question_data'):
