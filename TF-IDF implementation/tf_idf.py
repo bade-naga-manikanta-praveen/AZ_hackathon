@@ -31,8 +31,9 @@ with open("web scraping/question_name.txt", 'r') as f:
          extracted_question_text=file.read()
          index = extracted_question_text.find("Example")
          extracted_question_text=extracted_question_text[:index]
+        #  extracted_question_text=extracted_question_text.replace('\n', ' ')
          extracted_question_text=extracted_question_text.replace('-', ' ')
-      data.append(extracted_question_name.lower()+" "+extracted_question_text.lower())
+      data.append(extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_text.lower())
       # print(i,data[-1])
       # if(i>=6):   
       #    break
@@ -85,6 +86,7 @@ sorted_indices = similarity_scores.argsort(axis=0)[::-1].squeeze()
 
 # Print the sorted indices
 j=0
+
 for i in sorted_indices:
    
     if(similarity_scores[i]>=0.001):
@@ -93,7 +95,6 @@ for i in sorted_indices:
    #  print(similarity_scores[i])
     if(j>=10):
          break
-
 
 
 
