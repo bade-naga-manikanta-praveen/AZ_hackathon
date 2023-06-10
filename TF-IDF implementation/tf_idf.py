@@ -25,8 +25,8 @@ with open("web scraping/question_name.txt", 'r') as f:
       Q_name.append(extracted_question_name)      
       extracted_question_name=extracted_question_name.replace('-', ' ')     
 
-      folder_path = "web scraping/Question_data/1"
-      file_path = os.path.join(folder_path, "1.txt")
+      folder_path = f"web scraping/Question_data/{i}"
+      file_path = os.path.join(folder_path, f"{i}.txt")
       with open(file_path, 'r') as file:
          extracted_question_text=file.read()
          extracted_question_text=extracted_question_text.replace('\n', ' ')
