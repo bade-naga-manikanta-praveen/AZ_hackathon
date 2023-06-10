@@ -29,7 +29,8 @@ with open("web scraping/question_name.txt", 'r') as f:
       file_path = os.path.join(folder_path, f"{i}.txt")
       with open(file_path, 'r') as file:
          extracted_question_text=file.read()
-         extracted_question_text=extracted_question_text.replace('\n', ' ')
+         index = extracted_question_text.find("Example")
+         extracted_question_text=extracted_question_text[:index]
          extracted_question_text=extracted_question_text.replace('-', ' ')
       data.append(extracted_question_name.lower()+" "+extracted_question_text.lower())
       # print(i,data[-1])
