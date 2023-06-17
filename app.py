@@ -43,7 +43,7 @@ with open("web scraping/question_name.txt", 'r') as f:
       folder_path = f"web scraping/Question_data/{i}"
       file_path = os.path.join(folder_path, f"{i}.txt")
       with open(file_path, 'r') as file:
-         extracted_question_text=file.read()
+         extracted_question_text = file.read(encoding='latin-1')
          index = extracted_question_text.find("Example")
          extracted_question_text=extracted_question_text[:index]
          extracted_question_text=extracted_question_text.replace('-', ' ')
