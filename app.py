@@ -32,7 +32,7 @@ Q_difficulty=[]
 # i is counter in loop 
 i=0
 # extracting data
-with open("web scraping/question_name.txt", 'r') as f:
+with open("web scraping/question_name.txt", 'r', encoding='utf-8') as f:
    for line in f:
       i+=1
       text=line.strip()
@@ -49,13 +49,13 @@ with open("web scraping/question_name.txt", 'r') as f:
          extracted_question_text=extracted_question_text.replace('-', ' ')
       data.append(extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_name.lower()+" "+extracted_question_text.lower())
 
-with open("web scraping/question_index_with_link.txt", 'r') as f:
+with open("web scraping/question_index_with_link.txt", 'r', encoding='utf-8') as f:
    for line in f:
       text=line.strip()
       extracted_question_link=text.split('.',1)[-1]
       Q_link.append(extracted_question_link)
 
-with open("web scraping/question_difficulty.txt", 'r') as f:
+with open("web scraping/question_difficulty.txt", 'r', encoding='utf-8') as f:
    for line in f:
       Q_difficulty.append(line.strip())      
 
