@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+      body{
+    background-color: black;
+    color: white;
+      }
+      .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+  }
+  
+  #search{
+    padding: 10px 20px;
+    /* background-color: #4CAF50; */
+    background-color: white;
+    color:black;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+
+  #submit{
+    background-color:  #a91ef4;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+  }
+
+  .card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .question-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .question-Easy{
+    color: green;
+  }
+
+  .question-Medium{
+    color: orange;
+  }
+  .question-Hard{
+    color: red;
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .question-link{
+    text-decoration: none;
+    color:deeppink;
+  }
+  .question-link:hover{
+    color: deepskyblue;
+  }
+
+.question-link:active,
+.question-link:focus {
+  color: deeppink; /* Use the inherit color on hover, active, and focus states */
+  text-decoration: none; /* Remove underline on hover, active, and focus states */
+}
+
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  label{
+    font-size: 20px;
+    font-weight: bold;
+    color: coral;
+  }
+  .subheader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: lightgreen;
+  }
+  
+    </style>
+  </head>
+  <body>
+    <div class="title"><h1>Welcome to Algo Search</h1></div>
+    <div class="subheader"><h2>Top 20 relevant results from leetcode</h2></div>
+    <div class="subheader"><h2>powered by TF-IDF algorithm with cosine similarity </h2></div>
+    <div class="form" style="
+    display: flex;
+    justify-content: center;
+">
+      <form method="POST">
+        {{ form.hidden_tag() }} {{ form.search.label }} {{ form.search() }} {{
+        form.submit() }}
+      </form>
+    </div>
+    <div class="cards">
+      {% for document in results %}
+      <div class="card" style="display: flex;">
+     <div class="question-name"><a class="question-link" href="{{ document['Q_link'] }}" target="_blank">{{ document['Q_name'] }}</a></div> 
+      <div class="question-{{ document['Q_difficulty'] }}">Difficulty: {{ document['Q_difficulty'] }}</div>
+    </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
