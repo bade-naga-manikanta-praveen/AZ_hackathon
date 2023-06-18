@@ -10,4 +10,4 @@ building a interactive CP search engine <br>
 3)in vs code command enter "flask --app app run"  <br>
 4)you will be given link where my website is hosted  <br>
 5)you can search for any term in DSA , that you want to practice on  <br>
-6)you will get top 20 relevant results with question name(question link embedded inside) with question difficulty.  <br>
+6)you will get top 20 relevant results with question name(question link embedded inside question) with question difficulty.  <br>
